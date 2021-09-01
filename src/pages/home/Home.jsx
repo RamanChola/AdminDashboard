@@ -30,7 +30,7 @@ export default function Home() {
   useEffect(() => {
     const getStats = async () => {
       try {
-        const res = await axios.get("/users/stats", {
+        const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/users/stats`, {
           headers: {
             token:
               "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMWJlMmYxY2U4YjE5MjlhOGJlOTJlOCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYyOTcwNTE5MSwiZXhwIjoxNjMwMTM3MTkxfQ.TcpIGDgKVKvFDgBCR_VcmV4zLXGPSRfCvKrj85S1Z8g",

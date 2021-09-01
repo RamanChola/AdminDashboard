@@ -42,6 +42,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "proxy": "http://netflixbackend-env-1.eba-tn2xncxj.ap-south-1.elasticbeanstalk.com/api/"
+  }
 }

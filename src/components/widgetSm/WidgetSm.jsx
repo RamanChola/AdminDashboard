@@ -8,11 +8,16 @@ export default function WidgetSm() {
   useEffect(() => {
     const getNewUsers = async () => {
       try {
-        const res =  await axios.get("/users?new=true", {
-          headers: {
-            token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
-          },
-        });
+        const res = await axios.get(
+          `${process.env.REACT_APP_BACKEND_URL}/users?new=true`,
+          {
+            headers: {
+              token:
+                "Bearer " +
+                JSON.parse(localStorage.getItem("user")).accessToken,
+            },
+          }
+        );
         setNewUsers(res.data);
       } catch (err) {
         console.log(err);
@@ -27,10 +32,16 @@ export default function WidgetSm() {
       <ul className="widgetSmList">
         {newUsers.map((user) => (
           <li className="widgetSmListItem">
-            <img src={user.profilePic || "https://pbs.twimg.com/media/D8tCa48VsAA4lxn.jpg"} alt="" />
+            <img
+              src={
+                user.profilePic ||
+                "https://pbs.twimg.com/media/D8tCa48VsAA4lxn.jpg"
+              }
+              alt=""
+            />
             <div className="widgetSmUser">
               <span className="widgetSmUsername">{user.username}</span>
-              </div>
+            </div>
             <button className="widgetSmButton">
               <Visibility className="widgetSmIcon" /> Diplay
             </button>
